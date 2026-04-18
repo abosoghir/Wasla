@@ -17,6 +17,8 @@ public class Session : AuditableEntity
 
     public decimal TotalPrice { get; set; }
 
+
+
     public SessionStatus Status { get; set; } = SessionStatus.Pending;
 
     /// <summary>

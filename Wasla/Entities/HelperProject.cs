@@ -10,7 +10,7 @@ public class HelperProject : AuditableEntity
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
 
-    public string ProjectImageUrl { get; set; } = string.Empty;
+    public string? ProjectImageUrl { get; set; } 
     public string? RepositoryUrl { get; set; }
     public string? LiveDemoUrl { get; set; }
 
