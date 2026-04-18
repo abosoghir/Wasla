@@ -11,7 +11,7 @@ public class ChatBotConversation : AuditableEntity
 {
     public int Id { get; set; } 
 
-    public int? UserId { get; set; } // null = anonymous guest
+    public string? UserId { get; set; } // null = anonymous guest
 
     /// <summary>JSON array of { role, content, timestamp } objects.</summary>
     public string MessagesJson { get; set; } = "[]";

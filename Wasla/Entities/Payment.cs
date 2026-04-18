@@ -11,7 +11,7 @@ public class Payment : AuditableEntity
 
     public int? TaskId { get; set; }
 
-    public int PayerId { get; set; }
+    public string PayerId { get; set; } = string.Empty;
 
     public decimal Amount { get; set; }
 

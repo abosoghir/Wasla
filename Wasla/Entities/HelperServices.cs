@@ -14,7 +14,7 @@ public class HelperServices : AuditableEntity
 
     public string Description { get; set; } = string.Empty; // e.g. "Frontend", "Backend", "Math", "Design"
 
-    public int Price { get; set; } 
+    public decimal Price { get; set; } 
 
     // Navigation properties
     public Helper Helper { get; set; } = default!;

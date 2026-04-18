@@ -11,9 +11,9 @@ public class Review : AuditableEntity
 
     public int? SessionId { get; set; }
 
-    public int ReviewerId { get; set; }
+    public string ReviewerId { get; set; } = string.Empty;
 
-    public int RevieweeId { get; set; }
+    public string RevieweeId { get; set; } = string.Empty;
 
     public int Rating { get; set; }
 

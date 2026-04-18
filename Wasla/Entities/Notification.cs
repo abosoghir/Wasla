@@ -7,7 +7,7 @@ public class Notification : AuditableEntity
 {
     public int Id { get; set; } 
 
-    public int UserId { get; set; }
+    public string UserId { get; set; } = string.Empty;
 
     public NotificationType Type { get; set; } // e.g. "NewOffer", "SessionConfirmed", "TaskCompleted"
 

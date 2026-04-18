@@ -11,7 +11,7 @@ public class AIUsage : AuditableEntity
 {
     public int Id { get; set; }
 
-    public int UserId { get; set; }
+    public string UserId { get; set; } = string.Empty;
 
     public string FeatureType { get; set; } = string.Empty;
 

@@ -7,9 +7,9 @@ public class Message : AuditableEntity
 {
     public int Id { get; set; } 
 
-    public int SenderId { get; set; }
+    public string SenderId { get; set; } = string.Empty;
 
-    public int ReceiverId { get; set; }
+    public string ReceiverId { get; set; } = string.Empty;
 
     public int? TaskId { get; set; }
 
