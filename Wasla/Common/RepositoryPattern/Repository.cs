@@ -1,8 +1,8 @@
-﻿using EduBrain.Persistence;
+﻿using Wasla.Persistence;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace EduBrain.Common.RepositoryPattern;
+namespace Wasla.Common.RepositoryPattern;
 
 public class Repository<Entity>(ApplicationDbContext context) : IRepository<Entity> where Entity : class
 {

@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.Consts;
+﻿namespace Wasla.Common.Consts;
 
 
 public static class RegexPatterns

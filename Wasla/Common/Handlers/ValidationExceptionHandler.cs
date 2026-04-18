@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 
-namespace EduBrain.Common.Handlers;
+namespace Wasla.Common.Handlers;
 
 public class ValidationExceptionHandler : IExceptionHandler
 {

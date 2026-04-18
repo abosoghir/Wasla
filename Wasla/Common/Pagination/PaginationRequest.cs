@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.Pagination;
+﻿namespace Wasla.Common.Pagination;
 
 public record PaginationRequest
 {

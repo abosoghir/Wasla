@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using EduBrain.Entities.Common;
-using Wasla.Entities.Users;
-
-namespace Wasla.Entities;
+﻿namespace Wasla.Entities;
 
 public class HelperServices : AuditableEntity
 {

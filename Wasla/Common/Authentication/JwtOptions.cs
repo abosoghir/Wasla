@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EduBrain.Common.Authentication;
+namespace Wasla.Common.Authentication;
 
 /*
  *  implement options pattern

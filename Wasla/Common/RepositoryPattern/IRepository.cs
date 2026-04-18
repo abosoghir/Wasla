@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace EduBrain.Common.RepositoryPattern;
+namespace Wasla.Common.RepositoryPattern;
 
 public interface IRepository<Entity> where Entity : class
 {

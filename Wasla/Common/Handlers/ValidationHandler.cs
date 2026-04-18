@@ -1,5 +1,5 @@
 ﻿using MediatR;
-namespace EduBrain.Common.Handlers;
+namespace Wasla.Common.Handlers;
 
 public class ValidationHandler<TRequest, TResponse>(
     IEnumerable<IValidator<TRequest>> validators

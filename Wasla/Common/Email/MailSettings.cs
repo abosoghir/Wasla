@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.Email;
+﻿namespace Wasla.Common.Email;
 
 public class MailSettings
 {

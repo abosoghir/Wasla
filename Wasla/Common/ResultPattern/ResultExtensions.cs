@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.ResultPattern;
+﻿namespace Wasla.Common.ResultPattern;
 
 using Microsoft.AspNetCore.Mvc;
 
