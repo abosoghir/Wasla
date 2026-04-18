@@ -1,8 +1,9 @@
-﻿using Wasla.Entities.Users;
+﻿using EduBrain.Entities.Common;
+using Wasla.Entities.Users;
 
 namespace Wasla.Entities;
 
-public class TaskOffer
+public class TaskOffer : AuditableEntity
 {
     public int Id { get; set; }
 

@@ -1,8 +1,9 @@
-﻿using Wasla.Entities.Users;
+﻿using EduBrain.Entities.Common;
+using Wasla.Entities.Users;
 
 namespace Wasla.Entities;
 
-public class Task
+public class Task : AuditableEntity
 {
     public int Id { get; set; }
     public int SeekerId { get; set; }
@@ -24,6 +25,10 @@ public class Task
     public bool IsFreeTask { get; set; } = false;
 
     public DateTime? CompletedAt { get; set; }
+
+    public decimal ServicesFee { get; set; } = 0.10m; // 10% fee taken by Wasla from the helper's earnings
+
+    public decimal TotalCost => Budget.HasValue ? Budget.Value * (1 + ServicesFee) : 0m;
 
     // Navigation properties
     public Seeker Seeker { get; set; } = default!;

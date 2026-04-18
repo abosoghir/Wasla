@@ -1,4 +1,5 @@
-﻿using EduBrain.Entities.Users;
+﻿using EduBrain.Entities.Common;
+using EduBrain.Entities.Users;
 
 namespace Wasla.Entities;
 
@@ -6,7 +7,7 @@ namespace Wasla.Entities;
 /// Tracks AI-powered feature usage — paid with points (400+ pts threshold)
 /// or via direct subscription. Feature types: ProfileEnhancement, CodeReview, etc.
 /// </summary>
-public class AIUsage
+public class AIUsage : AuditableEntity
 {
     public int Id { get; set; }
 
