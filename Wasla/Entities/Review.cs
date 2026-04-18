@@ -1,8 +1,9 @@
-﻿using Wasla.Entities.Identity;
+﻿using EduBrain.Entities.Common;
+using EduBrain.Entities.Users;
 
 namespace Wasla.Entities;
 
-public class Review
+public class Review : AuditableEntity
 {
     public int Id { get; set; } 
 

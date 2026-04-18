@@ -1,4 +1,5 @@
-﻿using Wasla.Entities.Identity;
+﻿using EduBrain.Entities.Common;
+using EduBrain.Entities.Users;
 
 namespace Wasla.Entities;
 
@@ -6,7 +7,7 @@ namespace Wasla.Entities;
 /// Free chatbot available to all users.
 /// Stores conversation history as JSON.
 /// </summary>
-public class ChatBotConversation
+public class ChatBotConversation : AuditableEntity
 {
     public int Id { get; set; } 
 

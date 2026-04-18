@@ -15,7 +15,8 @@ public class Helper : AuditableEntity
     // Points & Rewards
     public int Points { get; set; }
     public int CompletedTasksCount { get; set; }
-    //public double 
+    public double SpeedOfResponseInMintues { get; set; } // Average time (in hours) to respond to offers or messages
+    
     // Every 5th task is free (gifted) — checked in service layer
     public bool IsNextTaskFree => CompletedTasksCount > 0 && CompletedTasksCount % 4 == 0;
 
@@ -23,11 +24,14 @@ public class Helper : AuditableEntity
     public double AverageRating { get; set; }
     public int TotalReviewsCount { get; set; }
 
+    public decimal TotalEarnings { get; set; }
+
     // Navigation
     public ApplicationUser User { get; set; } = default!;
-    public ICollection<HelperSkill> Skills { get; set; } = [];
+    public ICollection<HelperServices> Services { get; set; } = [];
     public ICollection<Session> Sessions { get; set; } = [];
     public ICollection<TaskOffer> TaskOffers { get; set; } = [];
     public ICollection<Review> ReviewsReceived { get; set; } = [];
     public ICollection<PointTransaction> PointTransactions { get; set; } = [];
+    public ICollection<HelperProject> Projects { get; set; } = [];
 }

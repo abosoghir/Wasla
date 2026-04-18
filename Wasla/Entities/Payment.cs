@@ -1,8 +1,9 @@
-﻿using Wasla.Entities.Identity;
+﻿using EduBrain.Entities.Common;
+using EduBrain.Entities.Users;
 
 namespace Wasla.Entities;
 
-public class Payment
+public class Payment : AuditableEntity
 {
     public int Id { get; set; }
 
