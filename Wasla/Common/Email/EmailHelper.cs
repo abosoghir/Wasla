@@ -1,9 +1,9 @@
-﻿using EduBrain.Entities.Users;
-using Hangfire;
+﻿using Hangfire;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Wasla.Entities.Identity;
 
-namespace EduBrain.Common.Email;
+namespace Wasla.Common.Email;
 
 public class EmailHelper(IHttpContextAccessor httpContextAccessor, IEmailSender emailSender)
 {
@@ -22,7 +22,7 @@ public class EmailHelper(IHttpContextAccessor httpContextAccessor, IEmailSender 
 
         BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
             user.Email!,
-            "🔐 EduBrain App: Email Confirmation",
+            "🔐 Wasla App: Email Confirmation",
             emailBody
         ));
 
@@ -42,7 +42,7 @@ public class EmailHelper(IHttpContextAccessor httpContextAccessor, IEmailSender 
 
         BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
             user.Email!,
-            "🔐 EduBrain App: Reset Password",
+            "🔐 Wasla App: Reset Password",
             emailBody
         ));
 
@@ -83,7 +83,7 @@ public class EmailHelper(IHttpContextAccessor httpContextAccessor, IEmailSender 
 
         BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
             email,
-            "🔐 EduBrain: Family Member Verification Code",
+            "🔐 Wasla: Family Member Verification Code",
             emailBody
         ));
 

@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.ResultPattern;
+﻿namespace Wasla.Common.ResultPattern;
 
 // search about Result Pattern 
 public class Result

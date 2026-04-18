@@ -1,12 +1,12 @@
-﻿using EduBrain.Entities.Users;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
+using Wasla.Entities.Identity;
 
-namespace EduBrain.Common.Authentication;
+namespace Wasla.Common.Authentication;
 
 public class JwtProvider(IOptions<JwtOptions> jwtOptions) : IJwtProvider
 {

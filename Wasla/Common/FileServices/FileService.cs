@@ -1,6 +1,6 @@
-﻿using EduBrain.Common.ResultPattern;
+﻿using Wasla.Common.ResultPattern;
 
-namespace EduBrain.Common.FileServices;
+namespace Wasla.Common.FileServices;
 
 public class FileService(IWebHostEnvironment env, ILogger<FileService> logger) : IFileService
 {

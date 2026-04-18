@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using FluentValidation;
+global using Wasla.Common.Consts;
+global using Wasla.Common.ResultPattern;
+global using Wasla.Common.RepositoryPattern;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using Mapster;
+global using Wasla.Common.Authentication;
+global using MediatR;
+global using Wasla.Common.Pagination;
+global using Wasla.Entities.Identity;

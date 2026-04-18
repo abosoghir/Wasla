@@ -1,9 +1,9 @@
-﻿using EduBrain.Entities.Users;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Reflection;
+using Wasla.Entities.Identity;
 
-namespace EduBrain.Persistence;
+namespace Wasla.Persistence;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
     IdentityDbContext<ApplicationUser, ApplicationRole, string>(options)

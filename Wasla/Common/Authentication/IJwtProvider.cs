@@ -1,6 +1,6 @@
-﻿using EduBrain.Entities.Users;
+﻿using Wasla.Entities.Identity;
 
-namespace EduBrain.Common.Authentication;
+namespace Wasla.Common.Authentication;
 
 public interface IJwtProvider
 {

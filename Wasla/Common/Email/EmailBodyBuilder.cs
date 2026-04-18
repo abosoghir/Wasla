@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.Email;
+﻿namespace Wasla.Common.Email;
 
 // this class is used to generate email body from html templates and replace the placeholders with actual values
 public static class EmailBodyBuilder

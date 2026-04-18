@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Wasla.Entities.Users;
+using Wasla.Entities.Identity;
 
 namespace Wasla.Entities;
 

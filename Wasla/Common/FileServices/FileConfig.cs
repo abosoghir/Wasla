@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.FileServices;
+﻿namespace Wasla.Common.FileServices;
 
 public static class FileConfig
 {

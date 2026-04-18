@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.Caching;
+﻿namespace Wasla.Common.Caching;
 
 public interface ICacheService
 {

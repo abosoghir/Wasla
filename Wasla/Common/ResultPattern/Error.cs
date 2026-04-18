@@ -1,4 +1,4 @@
-﻿namespace EduBrain.Common.ResultPattern;
+﻿namespace Wasla.Common.ResultPattern;
 
 public record Error(string code, string Description, int? StatusCode)
 {

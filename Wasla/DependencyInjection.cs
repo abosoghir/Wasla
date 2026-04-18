@@ -1,26 +1,18 @@
-﻿using EduBrain.Common.Authentication;
-using EduBrain.Common.Email;
-using EduBrain.Common.FileServices;
-using EduBrain.Common.Grading;
-using EduBrain.Common.Handlers;
-using EduBrain.Common.RepositoryPattern;
-using EduBrain.Entities.Users;
-using EduBrain.Persistence;
-using FluentValidation;
+﻿using Wasla.Common.Email;
+using Wasla.Common.FileServices;
+using Wasla.Common.Handlers;
+using Wasla.Persistence;
 using Hangfire;
-using Mapster;
 using MapsterMapper;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
+using Wasla.Entities.Identity;
 
-namespace EduBrain;
+namespace Wasla;
 
 
 public static class DependencyInjection
@@ -54,7 +46,6 @@ public static class DependencyInjection
         // inject services here 
         services.AddScoped<IEmailSender, EmailService>();
         services.AddScoped<EmailHelper>();
-        services.AddScoped<IGradingService, GradingService>();
 
         // BackgroundJobs 
         //services.AddScoped<BackgroundJobs>();

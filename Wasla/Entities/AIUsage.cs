@@ -1,4 +1,4 @@
-﻿using EduBrain.Entities.Users;
+﻿using Wasla.Entities.Identity;
 
 namespace Wasla.Entities;
 

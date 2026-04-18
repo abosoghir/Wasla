@@ -1,6 +1,6 @@
-﻿using EduBrain.Entities.Users;
+﻿using Wasla.Entities.Identity;
 
-namespace EduBrain.Entities.Common;
+namespace Wasla.Entities.Common;
 
 public class AuditableEntity
 {

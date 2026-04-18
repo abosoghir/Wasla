@@ -1,8 +1,8 @@
-﻿using EduBrain.Common.Caching;
+﻿using Wasla.Common.Caching;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json;
 
-namespace EduBrain.Common.Caching;
+namespace Wasla.Common.Caching;
 
 public class CacheService(IDistributedCache distributedCache, ILogger<CacheService> logger) : ICacheService
 {
