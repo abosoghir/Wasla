@@ -1,5 +1,5 @@
-﻿using EduBrain.Entities.Common;
-using Wasla.Entities.Users;
+﻿using Wasla.Entities.Common;
+using Wasla.Entities.Identity;
 
 namespace Wasla.Entities;
 

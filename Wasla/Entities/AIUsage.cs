@@ -1,6 +1,4 @@
-﻿using EduBrain.Entities.Users;
-
-namespace Wasla.Entities;
+﻿namespace Wasla.Entities;
 
 /// <summary>
 /// Tracks AI-powered feature usage — paid with points (400+ pts threshold)

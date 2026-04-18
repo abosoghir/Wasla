@@ -9,3 +9,4 @@ global using Wasla.Common.Authentication;
 global using MediatR;
 global using Wasla.Common.Pagination;
 global using Wasla.Entities.Identity;
+global using Wasla.Entities.Common;
