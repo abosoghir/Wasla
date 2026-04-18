@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
-using Wasla.Entities.Identity;
 
 namespace Wasla;
 
@@ -81,32 +80,13 @@ public static class DependencyInjection
 
     private static IServiceCollection AddSwaggerServices(this IServiceCollection services)
     {
-        // services.AddOpenApi();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-
-        //services.AddSwaggerGen(c =>
-        //{
-        //    c.TagActionsBy(api =>
-        //    {
-        //        var method = api.HttpMethod;
-        //        return new[] { method ?? "OTHER" };
-        //    });
-
-        //    c.DocInclusionPredicate((_, _) => true);
-        //});
-
         services.AddEndpointsApiExplorer();
-        //services.AddSwaggerGen();
 
         services.AddSwaggerGen(c =>
         {
+            //1. Feature-based grouping
             c.TagActionsBy(api =>
             {
-                var controllerNamespace = api.ActionDescriptor
-                    .EndpointMetadata
-                    .OfType<ApiControllerAttribute>()
-                    .FirstOrDefault();
-
                 var fullName = api.ActionDescriptor.DisplayName;
 
                 var featureName = fullName?
@@ -119,9 +99,34 @@ public static class DependencyInjection
             });
 
             c.DocInclusionPredicate((_, _) => true);
+
+            //2. JWT Authentication (Bearer)
+            c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                Description = "Enter JWT Token like this: Bearer {your token}"
+            });
+
+            c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+        {
+            {
+                new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                {
+                    Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                    {
+                        Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new string[] {}
+            }
+        });
         });
 
-        
         return services;
     }
 
