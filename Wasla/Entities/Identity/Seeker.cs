@@ -18,6 +18,5 @@ public class Seeker : AuditableEntity
     public ApplicationUser User { get; set; } = default!;
     public ICollection<SeekerTask> Tasks { get; set; } = [];
     public ICollection<Session> Sessions { get; set; } = [];
-    public ICollection<Review> ReviewsGiven { get; set; } = []; // Reviews this seeker has given to helpers
     public ICollection<Project> Projects { get; set; } = []; // Projects this seeker has posted
 }
