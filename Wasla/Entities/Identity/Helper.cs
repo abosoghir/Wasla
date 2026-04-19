@@ -32,6 +32,7 @@ public class Helper : AuditableEntity
     public ApplicationUser User { get; set; } = default!;
     public ICollection<Session> Sessions { get; set; } = [];
     public ICollection<TaskOffer> TaskOffers { get; set; } = []; // Offers made by the helper on tasks
+    public ICollection<ProjectOffer> ProjectOffers { get; set; } = []; // Offers made by the helper on projects
     public ICollection<Review> ReviewsReceived { get; set; } = []; // Reviews about the helper from seekers
     public ICollection<PointTransaction> PointTransactions { get; set; } = []; // History of points earned/spent by the helper
 
