@@ -38,4 +38,8 @@ public sealed class ApplicationUser : IdentityUser
     public ICollection<Wallet> Wallets { get; set; } = [];
 
     public ICollection<UserBadge> UserBadges { get; set; } = [];
+
+    public ICollection<Report> SubmittedReports { get; set; } = []; // Reports created by this user
+    public ICollection<Report> ReportsAgainstMe { get; set; } = []; // Reports where this user is the target
+    public ICollection<Report> ResolvedReports { get; set; } = [];  // Reports resolved by this admin/mod
 }
