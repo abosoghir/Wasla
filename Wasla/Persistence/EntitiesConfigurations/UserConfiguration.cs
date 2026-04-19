@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Wasla.Persistence.EntitiesConfigurations;
@@ -18,6 +18,8 @@ public class UserConfiguration : IEntityTypeConfiguration<ApplicationUser>
         builder.Property(x => x.Id).HasMaxLength(100);
         builder.Property(x => x.Name).HasMaxLength(100);
         builder.Property(x => x.PhoneNumber).HasMaxLength(20);
+        builder.Property(x => x.ProfilePictureUrl).HasMaxLength(500);
+        builder.Property(x => x.Bio).HasMaxLength(1000);
 
         builder.Property(x => x.EmailConfirmationCode).HasMaxLength(10);
         builder.Property(x => x.ResetPasswordCode).HasMaxLength(10);
