@@ -35,7 +35,7 @@ public class ConfirmEmailHandler(
         await _userManager.UpdateAsync(user);
 
         // Add Role
-        await _userManager.AddToRoleAsync(user, DefaultRoles.Member);
+        await _userManager.AddToRoleAsync(user, DefaultRoles.Helper);
 
         // Generate JWT + JTI
         // Get Roles

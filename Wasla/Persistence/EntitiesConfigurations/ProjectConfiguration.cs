@@ -60,9 +60,6 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
             .HasForeignKey(a => a.ProjectId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasIndex(p => p.SeekerId);
-        builder.HasIndex(p => p.Status);
-        builder.HasIndex(p => p.Category);
     }
 }
 
