@@ -4,9 +4,10 @@ using System.Reflection;
 using System.Security.Claims;
 namespace Wasla.Persistence;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor httpContextAccessor) :
     IdentityDbContext<ApplicationUser, ApplicationRole, string>(options)
 {
+    private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
     // identity-related entities
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
