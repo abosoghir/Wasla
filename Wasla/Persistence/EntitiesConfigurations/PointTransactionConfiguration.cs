@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Wasla.Entities.Gamification;
 
@@ -9,16 +10,29 @@ public class PointTransactionConfiguration : IEntityTypeConfiguration<PointTrans
     {
         builder.HasKey(pt => pt.Id);
 
+        builder.Property(pt => pt.HelperId)
+            .IsRequired();
 
-        builder.Property(pt => pt.RelatedEntityType).HasMaxLength(50);
-        builder.Property(pt => pt.Description).HasMaxLength(500);
+        builder.Property(pt => pt.Type)
+            .IsRequired();
+
+        builder.Property(pt => pt.Points)
+            .IsRequired();
+
+        builder.Property(pt => pt.BalanceAfter)
+            .IsRequired();
+
+        builder.Property(pt => pt.RelatedEntityType)
+            .HasMaxLength(50);
+
+        builder.Property(pt => pt.Description)
+            .HasMaxLength(500);
+
+        builder.Property(pt => pt.RelatedEntityId);
 
         builder.HasOne(pt => pt.Helper)
             .WithMany(h => h.PointTransactions)
             .HasForeignKey(pt => pt.HelperId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasIndex(pt => pt.HelperId);
-        builder.HasIndex(pt => pt.Type);
     }
 }
