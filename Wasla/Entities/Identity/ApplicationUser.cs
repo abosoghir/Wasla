@@ -42,4 +42,7 @@ public sealed class ApplicationUser : IdentityUser
     public ICollection<Report> SubmittedReports { get; set; } = []; // Reports created by this user
     public ICollection<Report> ReportsAgainstMe { get; set; } = []; // Reports where this user is the target
     public ICollection<Report> ResolvedReports { get; set; } = [];  // Reports resolved by this admin/mod
+
+    public ICollection<Review> ReviewsGiven { get; set; } = []; // Reviews written by this user about others
+    public ICollection<Review> ReviewsReceived { get; set; } = []; // Reviews received by this user about their services, sessions, or projects
 }
