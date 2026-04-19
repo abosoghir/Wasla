@@ -1,5 +1,3 @@
-
-
 namespace Wasla.Entities.Marketplace;
 
 public class SeekerTask : AuditableEntity
@@ -26,8 +24,7 @@ public class SeekerTask : AuditableEntity
     public Seeker Seeker { get; set; } = default!;
     public Helper? Helper { get; set; }
     public ICollection<TaskOffer> Offers { get; set; } = [];
-    public Review? Review { get; set; } 
-    public Payment? Payment { get; set; }
+
     public ICollection<Message> Messages { get; set; } = [];
     public ICollection<TaskAttachment> Attachments { get; set; } = [];
 }
