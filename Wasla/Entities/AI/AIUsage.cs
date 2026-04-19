@@ -1,7 +1,5 @@
 using Wasla.Common.Enums;
 using Wasla.Entities.Common;
-using Wasla.Entities.Identity;
-
 namespace Wasla.Entities.AI;
 
 public class AIUsage : AuditableEntity  
