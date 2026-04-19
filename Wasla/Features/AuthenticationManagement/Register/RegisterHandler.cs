@@ -1,19 +1,22 @@
 ﻿using Wasla.Common.Email;
-using Wasla.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography;
+using Wasla.Persistence;
 
 namespace Wasla.Features.AuthenticationManagement.Register;
 
 public class RegisterHandler(
     UserManager<ApplicationUser> userManager,
     ILogger<RegisterHandler> logger,
-    EmailHelper emailHelper) : IRequestHandler<RegisterRequest, Result<RegisterResponse>>
+    EmailHelper emailHelper, 
+    ApplicationDbContext context) : IRequestHandler<RegisterRequest, Result<RegisterResponse>>
 
 {
     private readonly UserManager<ApplicationUser> _userManager = userManager;
     private readonly ILogger<RegisterHandler> _logger = logger;
     private readonly EmailHelper _emailHelper = emailHelper;
+    private readonly ApplicationDbContext _context = context;
+
     public async Task<Result<RegisterResponse>> Handle(RegisterRequest request, CancellationToken ct)
     {
         if (await _userManager.Users.AnyAsync(x => x.Email == request.Email, ct))
@@ -35,6 +38,26 @@ public class RegisterHandler(
             var error = result.Errors.First();
 
             return Result.Failure<RegisterResponse>(new Error(error.Code, error.Description, StatusCodes.Status400BadRequest));
+        }
+
+        // Assign role to user
+        var roleResult = await _userManager.AddToRoleAsync(user, request.Role);
+        if (!roleResult.Succeeded)
+        {
+            var error = roleResult.Errors.First();
+            return Result.Failure<RegisterResponse>(new Error(error.Code, error.Description, StatusCodes.Status400BadRequest));
+        }
+
+        // Create Seeker or Helper entity based on role
+        if (request.Role == DefaultRoles.Seeker)
+        {
+            var seeker = new Seeker { UserId = user.Id };
+            _context.Seekers.Add(seeker);
+        }
+        else if (request.Role == DefaultRoles.Helper)
+        {
+            var helper = new Helper { UserId = user.Id };
+            _context.Helpers.Add(helper);
         }
 
         // Generate 6-digit OTP
