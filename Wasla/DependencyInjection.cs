@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
+using Wasla.Common.Gamification;
 
 namespace Wasla;
 
@@ -63,6 +64,8 @@ public static class DependencyInjection
         // services.AddHealthChecks(); // to add health checks 
 
         // Rate Limiting 
+
+        services.AddScoped<GamificationHelper>();
 
         return services;
     }
