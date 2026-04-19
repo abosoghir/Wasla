@@ -4,7 +4,8 @@ public record RegisterRequest(
     string Name,
     string Email,
     string PhoneNumber,
-    string Password
+    string Password,
+      string Role
 ) : IRequest<Result<RegisterResponse>>;
 
 
@@ -31,6 +32,12 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
            .MaximumLength(20)
            .Matches(RegexPatterns.PhoneNumber)
            .WithMessage("Invalid phone number. It should be 11 digits and start with 010, 011, 012, or 015.");
+
+
+        RuleFor(x => x.Role)
+            .NotEmpty()
+            .Must(role => role == DefaultRoles.Seeker || role == DefaultRoles.Helper)
+            .WithMessage("Role must be either 'Seeker' or 'Helper'.");
 
     }
 }

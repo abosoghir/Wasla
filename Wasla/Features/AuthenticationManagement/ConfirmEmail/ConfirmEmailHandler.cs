@@ -1,8 +1,5 @@
-using Wasla.Entities;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography;
-using Wasla.Entities.Identity;
 
 namespace Wasla.Features.AuthenticationManagement.ConfirmEmail;
 
@@ -35,7 +32,7 @@ public class ConfirmEmailHandler(
         await _userManager.UpdateAsync(user);
 
         // Add Role
-        await _userManager.AddToRoleAsync(user, DefaultRoles.Helper);
+        //await _userManager.AddToRoleAsync(user, DefaultRoles.Helper);
 
         // Generate JWT + JTI
         // Get Roles
