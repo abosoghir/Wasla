@@ -9,8 +9,28 @@ public class AIUsageConfiguration : IEntityTypeConfiguration<AIUsage>
     {
         builder.HasKey(a => a.Id);
 
-        builder.Property(a => a.UserId).HasMaxLength(100);
-        builder.Property(a => a.ErrorMessage).HasMaxLength(500);
+        builder.Property(a => a.UserId)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder.Property(a => a.ErrorMessage)
+            .HasMaxLength(500);
+
+        builder.Property(a => a.FeatureType)
+            .IsRequired();
+
+        builder.Property(a => a.Status)
+            .IsRequired();
+
+        builder.Property(a => a.PointsCost)
+            .IsRequired();
+
+        builder.Property(a => a.InputLength);
+
+        builder.Property(a => a.OutputLength);
+
+        builder.Property(a => a.UsedAt)
+            .IsRequired();
 
         builder.HasOne(a => a.User)
             .WithMany(u => u.AIUsages)
@@ -21,8 +41,5 @@ public class AIUsageConfiguration : IEntityTypeConfiguration<AIUsage>
             .WithMany()
             .HasForeignKey(a => a.PointTransactionId)
             .OnDelete(DeleteBehavior.SetNull);
-
-        builder.HasIndex(a => a.UserId);
-        builder.HasIndex(a => a.UsedAt);
     }
 }
