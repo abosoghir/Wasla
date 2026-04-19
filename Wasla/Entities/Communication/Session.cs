@@ -22,7 +22,6 @@ public class Session : AuditableEntity
 
     public Seeker Seeker { get; set; } = default!;
     public Helper Helper { get; set; } = default!;
-    public Review? Review { get; set; } // One-to-one relationship with Review
-    public Payment? Payment { get; set; } // One-to-one relationship with Payment
+
     public ICollection<Message> Messages { get; set; } = []; // Messages related to this session (e.g., pre-session coordination, post-session follow-up, etc.)
 }
