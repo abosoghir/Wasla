@@ -8,7 +8,7 @@ public class TaskOffer : AuditableEntity
 {
     public int Id { get; set; }
     public int TaskId { get; set; }
-    public string HelperId { get; set; } = string.Empty;
+    public int HelperId { get; set; }
     public string? Message { get; set; }
     public decimal ProposedPrice { get; set; } // Optional: Helper can propose a price different from the task's budget
     public int ProposedDurationDays { get; set; } // Optional: Helper can propose a duration different from the task's deadline

@@ -7,8 +7,8 @@ namespace Wasla.Entities.Communication;
 public class Session : AuditableEntity
 {
     public int Id { get; set; }
-    public string SeekerId { get; set; } = string.Empty;
-    public string HelperId { get; set; } = string.Empty;
+    public int SeekerId { get; set; }
+    public int HelperId { get; set; }
 
     public DateTime ScheduledAt { get; set; }
     public int DurationMinutes { get; set; }

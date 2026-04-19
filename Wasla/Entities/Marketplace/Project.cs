@@ -7,7 +7,7 @@ namespace Wasla.Entities.Marketplace;
 public class Project : AuditableEntity
 {
     public int Id { get; set; }
-    public string SeekerId { get; set; } = string.Empty;
+    public int SeekerId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public decimal Budget { get; set; }

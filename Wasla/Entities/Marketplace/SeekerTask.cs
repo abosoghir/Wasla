@@ -5,8 +5,8 @@ namespace Wasla.Entities.Marketplace;
 public class SeekerTask : AuditableEntity
 {
     public int Id { get; set; }
-    public string SeekerId { get; set; } = string.Empty;
-    public string? HelperId { get; set; } // Nullable until an offer is accepted
+    public int SeekerId { get; set; }
+    public int? HelperId { get; set; } // Nullable until an offer is accepted
 
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;

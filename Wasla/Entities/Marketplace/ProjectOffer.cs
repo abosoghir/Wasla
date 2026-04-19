@@ -8,7 +8,7 @@ public class ProjectOffer : AuditableEntity
 {
     public int Id { get; set; }
     public int ProjectId { get; set; }
-    public string HelperId { get; set; } = string.Empty;
+    public int HelperId { get; set; } 
     public string? Message { get; set; }
     public decimal ProposedPrice { get; set; }
     public int ProposedDurationDays { get; set; }

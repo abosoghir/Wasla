@@ -7,7 +7,7 @@ namespace Wasla.Entities.Gamification;
 public class PointTransaction : AuditableEntity
 {
     public int Id { get; set; }
-    public string HelperId { get; set; } = string.Empty; // The helper whose points are being modified
+    public int HelperId { get; set; } // The helper whose points are being modified
     public PointTransactionType Type { get; set; }
     public int Points { get; set; }
     public int BalanceAfter { get; set; } // The helper's point balance after this transaction
