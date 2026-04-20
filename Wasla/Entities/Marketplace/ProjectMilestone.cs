@@ -13,7 +13,7 @@ public class ProjectMilestone : AuditableEntity
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public decimal Amount { get; set; }
-    public int OrderIndex { get; set; }
+    public int OrderIndex { get; set; } //the order of the milestone in the project, starting from 0 for the first milestone
     public MilestoneStatus Status { get; set; } = MilestoneStatus.Pending;
     public DateTime? CompletedAt { get; set; }
     public DateTime? DueDate { get; set; }
