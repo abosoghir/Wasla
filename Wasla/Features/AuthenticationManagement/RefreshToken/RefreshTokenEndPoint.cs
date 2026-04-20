@@ -2,7 +2,7 @@
 
 namespace Wasla.Features.AuthenticationManagement.RefreshToken;
 
-[Route("auth")]
+[Route("api/auth")]
 [ApiController]
 public class RefreshTokenEndPoint(IMediator mediator) : ControllerBase
 {

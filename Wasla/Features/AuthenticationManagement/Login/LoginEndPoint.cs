@@ -2,7 +2,7 @@
 
 namespace Wasla.Features.AuthenticationManagement.Login;
 
-[Route("auth")]
+[Route("api/auth")]
 [ApiController]
 public class LoginEndPoint(IMediator mediator, ILogger<LoginEndPoint> logger) : ControllerBase
 {

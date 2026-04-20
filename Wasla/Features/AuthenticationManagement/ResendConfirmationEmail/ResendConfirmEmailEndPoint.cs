@@ -2,7 +2,7 @@
 
 namespace Wasla.Features.AuthenticationManagement.ResendConfirmationEmail;
 
-[Route("auth")]
+[Route("api/auth")]
 [ApiController]
 public class ResendConfirmEmailEndPoint(IMediator mediator) : ControllerBase
 {
