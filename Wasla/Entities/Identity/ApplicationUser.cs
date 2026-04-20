@@ -16,7 +16,11 @@ public sealed class ApplicationUser : IdentityUser
     public string Name { get; set; } = string.Empty;
     public string? ProfilePictureUrl { get; set; }
     public string? Bio { get; set; }
-
+    public string? Country { get; set; }
+    public string? City { get; set; }
+    public string? WebsiteUrl { get; set; }
+    public string? LinkedInUrl { get; set; }
+    public string? GitHubUrl { get; set; }
     public string? EmailConfirmationCode { get; set; }
     public DateTime? EmailConfirmationCodeExpiration { get; set; }
     public string? ResetPasswordCode { get; set; }
