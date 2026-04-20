@@ -2,7 +2,7 @@
 
 namespace Wasla.Features.AuthenticationManagement.Register;
 
-[Route("auth")]
+[Route("api/auth")]
 [ApiController]
 public class RegisterEndPoint(IMediator mediator) : ControllerBase
 {
