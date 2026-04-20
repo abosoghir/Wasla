@@ -1,8 +1,4 @@
-﻿using Wasla.Common.Email;
-using Wasla.Common.FileServices;
-using Wasla.Common.Handlers;
-using Wasla.Persistence;
-using Hangfire;
+﻿using Hangfire;
 using MapsterMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -10,7 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
+using Wasla.Common.AIIntegration;
+using Wasla.Common.Email;
+using Wasla.Common.FileServices;
 using Wasla.Common.Gamification;
+using Wasla.Common.Handlers;
+using Wasla.Persistence;
 
 namespace Wasla;
 
@@ -66,6 +67,14 @@ public static class DependencyInjection
         // Rate Limiting 
 
         services.AddScoped<GamificationHelper>();
+
+        // AI Integration
+        services.AddHttpClient<IAIService, AIService>(client =>
+        {
+            client.BaseAddress = new Uri(configuration["AIService:BaseUrl"] ?? "https://ai-api.wasla.com");
+            client.Timeout = TimeSpan.FromSeconds(30);
+        });
+
 
         return services;
     }
